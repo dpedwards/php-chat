@@ -8,7 +8,7 @@ ini_set('display_errors', '1');
 // Database credentials
 $hostname = "localhost";
 $username = "root";
-$password = "password";
+$password = "pa55word";
 $dbname = "simple_chat_db";
 
 try {
@@ -25,4 +25,5 @@ try {
     echo "An error occurred while connecting to the database. Please check the database connection in php/config.php and try again.";
     exit; // Stop further execution of the script
 }
+// Copyright Davain Pablo Edwards core8@gmx.net. Licensed https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
 ?>

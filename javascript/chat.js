@@ -1,3 +1,4 @@
+/* Copyright Davain Pablo Edwards core8@gmx.net. Licensed https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en */
 const form = document.querySelector(".typing-area"),
       incoming_id = form.querySelector(".incoming_id").value,
       inputField = form.querySelector(".input-field"),

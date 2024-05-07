@@ -1,3 +1,4 @@
+/* Copyright Davain Pablo Edwards core8@gmx.net. Licensed https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en */
 const form = document.querySelector(".login form"),
       continueBtn = form.querySelector(".button input"),
       errorText = form.querySelector(".error-text");

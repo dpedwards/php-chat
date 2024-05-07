@@ -1,3 +1,4 @@
+/* Copyright Davain Pablo Edwards core8@gmx.net. Licensed https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en */
 // JavaScript for dynamic user search and listing
 const searchBar = document.querySelector(".search input"),
       searchIcon = document.querySelector(".search button"),

@@ -1,4 +1,5 @@
 <?php
+// Copyright Davain Pablo Edwards core8@gmx.net. Licensed https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
 while ($row = mysqli_fetch_assoc($query)) {
     // Retrieve the last message exchanged between the users
     $sql2 = "SELECT * FROM messages WHERE (incoming_msg_id = {$row['unique_id']}

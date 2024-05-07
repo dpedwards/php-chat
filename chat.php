@@ -1,4 +1,5 @@
 <?php 
+// Copyright Davain Pablo Edwards core8@gmx.net. Licensed https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
 // Only start the session if one hasn't been started yet
 if (session_status() == PHP_SESSION_NONE) {
   session_start();

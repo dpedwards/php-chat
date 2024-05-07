@@ -1,3 +1,4 @@
+<!-- Copyright Davain Pablo Edwards core8@gmx.net. Licensed https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

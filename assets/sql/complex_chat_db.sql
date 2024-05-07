@@ -1,3 +1,4 @@
+-- Copyright Davain Pablo Edwards core8@gmx.net. Licensed https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en 
 -- Create `users` table
 CREATE TABLE `users` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,

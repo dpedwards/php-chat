@@ -1,4 +1,5 @@
 <?php 
+// Copyright Davain Pablo Edwards core8@gmx.net. Licensed https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en
 session_start();
 include_once "php/config.php";
 if (!isset($_SESSION['unique_id'])) {
