@@ -6,7 +6,6 @@ if (session_status() == PHP_SESSION_NONE) {
 // Check if the session variable 'unique_id' is set, and redirect if true
 if (isset($_SESSION['unique_id'])) {
     header("location: users.php");
-    exit; // It's good practice to call exit() after a header redirect to ensure no further script execution
 }
 
 include_once "header.php"; 
@@ -14,8 +13,8 @@ include_once "header.php";
 <body>
   <div class="wrapper">
     <section class="form signup">
-      <header>Simple MySQL + PHP Realtime Chat App</header>
-      <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
+      <header>MySQL + PHP Realtime Chat</header>
+      <form action="php/confirm_password.php" method="POST" enctype="multipart/form-data" autocomplete="off">
         <div class="error-text"></div>
         <div class="name-details">
           <div class="field input">
@@ -35,6 +34,10 @@ include_once "header.php";
           <label>Password</label>
           <input type="password" name="password" placeholder="Enter new password" required>
           <i class="fas fa-eye"></i>
+        </div>
+        <div class="field input">
+          <label>Confirm Password</label>
+          <input type="password" name="confirm_password" placeholder="Confirm your password" required>
         </div>
         <div class="field image">
           <label>Select Image</label>
