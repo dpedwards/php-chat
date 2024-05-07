@@ -1,26 +1,28 @@
 <?php
-  // Enable strict reporting
-  declare(strict_types=1);
+// Enable strict reporting
+declare(strict_types=1);
 
-  error_reporting(E_ALL);
-  ini_set('display_errors', '1');
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
-  $hostname = "localhost";
-  $username = "root";
-  $password = "pa55word";
-  $dbname = "chat_db";
+// Database credentials
+$hostname = "localhost";
+$username = "root";
+$password = "password";
+$dbname = "chat_db";
 
-  // Use try-catch block for exception handling
-  try {
-    $conn = mysqli_connect($hostname, $username, $password, $dbname);
+try {
+    // Use mysqli class for a more object-oriented approach
+    $conn = new mysqli($hostname, $username, $password, $dbname);
 
-    if (!$conn) {
-      // Instead of echoing, consider using a more robust error handling mechanism
-      throw new Exception("Database connection error: " . mysqli_connect_error());
+    // Check for connection errors
+    if ($conn->connect_error) {
+        throw new Exception("Database connection error: " . $conn->connect_error);
     }
-  } catch (Exception $e) {
-    // Handle the error, such as logging it and displaying a user-friendly message
+} catch (Exception $e) {
+    // Log the error and show a user-friendly message
     error_log($e->getMessage());
-    echo "An error occurred while connecting to the database. Please try again later.";
-  }
+    echo "An error occurred while connecting to the database. Please check the database connection in php/config.php and try again.";
+    exit; // Stop further execution of the script
+}
 ?>
