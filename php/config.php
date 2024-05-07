@@ -9,7 +9,7 @@ ini_set('display_errors', '1');
 $hostname = "localhost";
 $username = "root";
 $password = "password";
-$dbname = "chat_db";
+$dbname = "simple_chat_db";
 
 try {
     // Use mysqli class for a more object-oriented approach
