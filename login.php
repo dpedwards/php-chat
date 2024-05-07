@@ -1,12 +1,15 @@
 <?php 
 // Only start the session if one hasn't been started yet
 if (session_status() == PHP_SESSION_NONE) {
-  session_start();
+    session_start();
 }
+
+// Include config.php to establish database connection
+include_once "php/config.php"; 
+
 // Check if the session variable 'unique_id' is set, and redirect if true
 if (isset($_SESSION['unique_id'])) {
     header("location: users.php");
-    exit; // It's good practice to call exit() after a header redirect to ensure no further script execution
 }
 
 include_once "header.php"; 
@@ -14,7 +17,7 @@ include_once "header.php";
 <body>
   <div class="wrapper">
     <section class="form login">
-      <header>Simple MySQL + PHP Realtime Chat App</header>
+      <header>MySQL + PHP Realtime Chat</header>
       <form action="#" method="POST" enctype="multipart/form-data" autocomplete="off">
         <div class="error-text"></div>
         <div class="field input">
