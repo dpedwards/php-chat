@@ -1,0 +1,23 @@
+@startuml
+entity USERS {
+    user_id int
+    unique_id int
+    fname varchar
+    lname varchar
+    email varchar
+    password varchar
+    img varchar
+    status varchar
+}
+
+entity MESSAGES {
+    msg_id int
+    incoming_msg_id int
+    outgoing_msg_id int
+    msg varchar
+}
+
+USERS ||--o{ MESSAGES : incoming_msg_id
+USERS ||--o{ MESSAGES : outgoing_msg_id
+
+@enduml

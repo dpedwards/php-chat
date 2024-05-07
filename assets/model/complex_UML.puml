@@ -1,0 +1,73 @@
+@startuml
+entity USERS {
+    user_id int
+    unique_id int
+    fname varchar
+    lname varchar
+    email varchar
+    password varchar
+    status varchar
+}
+
+entity CONVERSATIONS {
+    conv_id int
+    title varchar
+}
+
+entity MESSAGES {
+    msg_id int
+    incoming_msg_id int
+    outgoing_msg_id int
+    msg varchar
+    timestamp datetime
+    status enum
+    conv_id int
+}
+
+entity CONTACTS {
+    contact_id int
+    user_id int
+    contact_user_id int
+    status enum
+}
+
+entity CONVERSATION_PARTICIPANTS {
+    conv_participant_id int
+    conv_id int
+    user_id int
+}
+
+entity USER_PROFILES {
+    profile_id int
+    user_id int
+    birthdate date
+    bio text
+    location varchar
+    img varchar
+}
+
+entity USER_SETTINGS {
+    settings_id int
+    user_id int
+    theme varchar
+    notifications tinyint
+    privacy varchar
+}
+
+entity ATTACHMENTS {
+    attachment_id int
+    msg_id int
+    file_path varchar
+}
+
+USERS ||--o{ USER_PROFILES : user_id
+USERS ||--o{ USER_SETTINGS : user_id
+USERS ||--o{ CONTACTS : user_id
+CONTACTS ||--o{ USERS : contact_user_id
+USERS ||--o{ MESSAGES : incoming_msg_id
+USERS ||--o{ MESSAGES : outgoing_msg_id
+MESSAGES ||--o| CONVERSATIONS : conv_id
+MESSAGES ||--o{ ATTACHMENTS : msg_id
+CONVERSATIONS ||--o{ CONVERSATION_PARTICIPANTS : conv_id
+USERS ||--o{ CONVERSATION_PARTICIPANTS : user_id
+@enduml
