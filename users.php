@@ -61,7 +61,7 @@ if (!isset($_SESSION['unique_id'])) {
                 while ($userRow = mysqli_fetch_assoc($sql)) {
                     $userImgPath = "php/images/" . $userRow['img'];
                     if (!file_exists($userImgPath)) {
-                        $userImgPath = "php/images/default.png"; // Assign a default image
+                        $userImgPath = "php/images/default.jpg"; // Assign a default image
                     }
                     echo '<a href="chat.php?user_id=' . $userRow['unique_id'] . '">
                             <div class="content">
